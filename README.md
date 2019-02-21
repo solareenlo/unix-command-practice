@@ -69,3 +69,28 @@ rmdir test2/test3/config
 # 空でないディレクトリを削除する
 rm -r test2
 ```
+
+## ファイル操作
+```bash
+# file.txtの中身を全部一斉に見る
+cat path/to/file.txt
+
+# file.txtの中身を少しずつ見るには
+less path/to/file.txt
+# 矢印キーでスクロール
+# space で下へ移動
+# Control + F で一画面先へ移動
+# Control + B で一画面前へ移動
+# g でファイル先頭へ移動
+# G でファイル末尾へ移動
+# q で終了
+
+# 現在のディレクトリにファイルコピー
+cp path/to/file.txt .
+
+# 現在のディレクトリにあるファイルを名前変更
+mv file.txt file2.txt
+
+# ファイルを削除
+rm file2.txt
+```
