@@ -45,3 +45,27 @@ cd -
 # ホームディレクトリへ戻る
 cd
 ```
+
+## ディレクトリを操作する
+```bash
+# ディレクトリを新規作成
+mkdir test
+
+# ディレクトリ一覧表示
+ls
+
+# ディレクトリをコピー
+cp -r test test2
+
+# test3ディレクトリの中にconfigディレクトリを一気に作成する
+makir -p test3/config
+
+# test3ディレクトリをtest2ディレクトリに移動する
+mv test3 test2
+
+# 空のディレクトリを削除する
+rmdir test2/test3/config
+
+# 空でないディレクトリを削除する
+rm -r test2
+```
