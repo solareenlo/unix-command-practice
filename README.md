@@ -204,3 +204,27 @@ chmod 774 sample = rwx rwx r--
 chmod 664 sample = rw- rw- r--
 # となる
 ```
+
+## 独自のコマンドを作る
+```bash
+# 先ずはコマンドが先に存在しないことを確認する
+type hi
+> -bash: type: hi: not found
+# で, OK
+
+# hi!と出力されるコマンドをvimで作成する
+vim hi
+#!/bin/bash
+echo 'hi!'
+:wq
+
+# hiコマンドの実行権限を見てみる
+ls -l
+> -rw-rw-r-- solareenlo solareenlo 日付 hi
+# 実行権限が無いので付与する
+chmod u+x hi
+ls -l
+> -rwx-rw-r-- solareenlo solareenlo 日付 hi
+./hi
+> hi!
+```
