@@ -342,3 +342,37 @@ tail -3 boot.log
 grep 'etc' boot.log
 > 検索結果が返ってくる
 ```
+
+# リダイレクション, パイプを使う
+```bash
+# コマンドの実行結果をテキストファイルに出力する
+echo 'date' > cmd.txt
+cat cmd.txt
+> date
+# cmd.txtの中にdateが書き込まれた
+
+# コマンドの実行結果をテキストファイルの末尾に付け加える
+echo 'free' >> cmd.txt
+cat cmd.txt
+> date
+> free
+
+# 逆にテキストファイルの中身をコマンドに渡して実行する
+bash < cmd.txt
+> 日付
+> メモリの使用状況
+
+# テキストファイルの中身をコマンドに渡した実行結果をテキストファイルに書き込む
+bash < cmd.txt > result.txt
+cat result.txt
+> 日付
+> メモリの使用状況
+
+# コマンドの実行結果をパイプを使ってコマンドに渡す
+ls -l /etc | grep 'bash'
+> bashを含むls -l /etcの結果が返ってくる
+
+# さらに, 上記の結果の行数を調べる
+ls -l /etc | grep 'bash' | wc -l
+> 3
+```
