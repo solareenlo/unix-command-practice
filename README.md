@@ -259,3 +259,37 @@ echo $PATH
 > /anaconda3/bin:/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/home/現在の/path/test
 # 環境変数に$を付けると, その値を意味する
 ```
+
+## 管理者ユーザーになる
+```bash
+ls -l /var/log/boot.log
+> -rw------- 1 root root 27000 日付 /var/log/boot.log
+cat !$
+> cat /var/log/boot.log
+> cat: /var/log/boot.log: 許可がありません
+# となるので,
+# rootユーザーに切り替える
+# 現在のディレクトリにログイン
+sudo su
+> Password:
+# か,
+# ホームディレクトリにログイン
+sudo su -l
+> Password:
+# か,
+sudo su -
+> Password:
+
+pwd
+> /root
+cat /var/log/boot.log
+> きちんと中身が見れる
+
+# rootユーザーを抜ける
+exit
+
+# rootユーザーは何でもできるので, うっかりで大変なことになるので,
+# 実際はsudoで1つ1つrootユーザー権限でコマンドを実行する.
+sudo cat /var/log/boot.log
+> きちんと中身が見れる
+```
