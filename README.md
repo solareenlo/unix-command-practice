@@ -146,3 +146,14 @@ man mkdir
 # のように/を使って行う.
 # 後の操作はvimと一緒.
 ```
+
+## シンボリックリンクの使い方
+```bash
+# シンボリックリンクの付け方
+mkdir -p config/production/database
+ln -s config/production/database/ dbconfig
+ls -l
+
+# シンボリックリンクを解消する
+unlink dbconfig
+```
