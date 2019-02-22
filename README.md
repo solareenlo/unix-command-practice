@@ -387,3 +387,23 @@ ls /etc/*.conf
 ls /etc/c??.*
 > 当該条件に合致するものが表示される
 ```
+
+# find, xargsを使う
+```bash
+# ファイルを検索してくれるfind
+# find 場所 名前で検索 条件(initのあとは何でも良い)
+find /etc -name 'init*'
+> 当該ファイルが出力される
+
+# ディレクトリを覗いてファイルだけ検索したい場合
+find /etc -name 'init*' -type f
+
+# さらに, 検索したファイルに対して別のコマンドを実行したい場合は, -exec wc -l {} + を使う.
+# {}の中に検索結果を入れて実行してくれる.
+find /etc -name 'init*' -type f -exec wc -l {} +
+> 当該ファイルの行数がカウントされて表示される
+
+# 複数の結果をコマンドに流し込めるxargsもある
+find /etc -name 'init*' -type f | xargs wc -l
+> 当該ファイルの行数がカウントされて表示される
+```
