@@ -407,3 +407,32 @@ find /etc -name 'init*' -type f -exec wc -l {} +
 find /etc -name 'init*' -type f | xargs wc -l
 > 当該ファイルの行数がカウントされて表示される
 ```
+
+# ブレース展開を使う
+```bash
+# まとめて展開
+echo {a, b, c}
+> a b c
+echo {1..10}
+> 1 2 3 4 5 6 7 8 9 10
+echo {1..3}{a..c}
+> 1a 1b 1c 2a 2b 2c 3a 3b 3c
+
+# 連続してコマンドを実行するには&&を使う
+mkdir test && cd test
+
+# ブレース展開を使って一気にディレクトリを作成する
+mkdir app{1..3}
+ls
+> app1 app2 app3
+
+# ブレース展開を使って一気にディレクトリの中にファイルを作成する
+touch app{1..3}/test{1..3}{.txt,.jpeg,.git}
+ls app2
+> test1.txt test1.jpeg test1.git test2.txt test2.jpeg test2.git test3.txt test3.jpeg test3.git
+
+# 上記の中から特定の拡張子のファイルだけ削除する
+rm app{1..3}/test{1..3}{.jpeg,.git}
+ls app2
+> test1.txt test2.txt test3.txtt
+```
