@@ -157,3 +157,19 @@ ls -l
 # シンボリックリンクを解消する
 unlink dbconfig
 ```
+
+## ユーザーとグループを確認する
+```bash
+# ユーザーを確認する
+cat /etc/passwd
+> solareenlo:x:1000:1000:solareenlo,,,:/home/solareenlo:/bin/bash
+# ユーザー名:パスワード有り:ユーザーID:グループID:グループ名,,,:ホームディレクトリ:シェルの場所
+
+# グループを確認する
+cat /etc/group
+> solareenlo:x:1000:
+# グループ名:パスワード有り:グループID:所属するユーザー名
+
+# 自分が所属しているグループ名を表示
+groups
+```
