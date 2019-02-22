@@ -173,3 +173,22 @@ cat /etc/group
 # 自分が所属しているグループ名を表示
 groups
 ```
+
+## パーミッションの変更
+```bash
+# 一番はじめの状態が
+# -rwxrw-r--. 1 solareenlo solareenlo 日付 sample
+# としよう.
+
+# groupに実行権限を付与する
+chmod o+x sample
+> rwx rwx r--
+
+# groupとotherに実行権限を与える
+chmod go+x sample
+> rwx rwx r-x
+
+# user, group, other全員から実行権限を剥奪する
+chmod a-x sample
+> rw- rw- r--
+```
