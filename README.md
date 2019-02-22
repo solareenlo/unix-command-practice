@@ -408,7 +408,7 @@ find /etc -name 'init*' -type f | xargs wc -l
 > 当該ファイルの行数がカウントされて表示される
 ```
 
-# ブレース展開を使う
+## ブレース展開を使う
 ```bash
 # まとめて展開
 echo {a, b, c}
