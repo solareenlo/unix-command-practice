@@ -293,3 +293,20 @@ exit
 sudo cat /var/log/boot.log
 > きちんと中身が見れる
 ```
+
+# 管理者を変更するchownを使う
+```bash
+cp /var/log/boot.log .
+> cp: '/var/log/boot.log' を読み込み用に開くことができません: 許可がありません
+sudo !!
+> sudo cp /var/log/boot.log .
+ls -l
+> -rw------- 1 root root 27000 日付 boot.log
+cat boot.log
+> cat: boot.log: 許可がありません
+# boot.logのオーナーを変更する
+sudo chown solareenlo:solareenlo boot.log
+> -rw------- 1 solareenlo solareenlo 27000 日付 boot.log
+cat boot.log
+> boot.logの中身が見れる
+```
