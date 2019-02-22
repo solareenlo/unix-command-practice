@@ -192,3 +192,15 @@ chmod go+x sample
 chmod a-x sample
 > rw- rw- r--
 ```
+
+## 数値によるパーミッションの変更
+```bash
+# rwx = 4+2+1 = 7
+# と, 2進数の和で表現される.
+# ので,
+rwx rw- r-- = 4+2+1, 4+2+0, 4+0+0 = 764
+# ので,
+chmod 774 sample = rwx rwx r--
+chmod 664 sample = rw- rw- r--
+# となる
+```
