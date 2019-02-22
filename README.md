@@ -228,3 +228,34 @@ ls -l
 ./hi
 > hi!
 ```
+
+## 一時的にpathを通す
+```bash
+pwd
+> /home/現在の/path/test
+export PATH=/home/現在の/path/test:$PATH
+
+# どこにpathが通っているのかを見るには
+echo $PATH
+> /anaconda3/bin:/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/home/現在の/path/test
+# いろいろなpathが通っているディレクトリが見れる
+
+hi
+> hi!
+# この方法は一時的なpathの通し方
+
+# 実行しようとしているコマンド(hi)がどこから呼び出されているのかを探るには
+which hi
+
+# 全体の環境変数を見るには
+printenv
+> TERM_PROGRAM=Apple_Terminal
+> ANDROID_HOME=/Users/solareenlo/Library/Android/sdk
+> TERM=xterm-256color
+> SHELL=/bin/bash
+> CLICOLOR=1
+# こんな感じで出てくる
+echo $PATH
+> /anaconda3/bin:/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/home/現在の/path/test
+# 環境変数に$を付けると, その値を意味する
+```
