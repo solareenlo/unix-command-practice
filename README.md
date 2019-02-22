@@ -310,3 +310,35 @@ sudo chown solareenlo:solareenlo boot.log
 cat boot.log
 > boot.logの中身が見れる
 ```
+
+# wc, head, tail, grepを使う
+```bash
+# ファイルの行数, 単語数, 文字数をカウントしてくれるwc
+wc boot.log
+> 490 3397 27077 boot.log
+
+# ファイルの行数だけ表示
+wc -l boot.log
+> 490 boot.log
+
+# ファイルの先頭10行をcatしたい時
+head boot.log
+> 先頭の10行だけが表示される
+
+# ファイルの先頭3行だけを表示したい時
+head -n 3 boot.log
+head -3 boot.lgo
+> 先頭の3行だけが表示される
+
+# ファイルの末尾から10行を表示する
+tail boot.log
+
+# ファイルの末尾から3行を表示する
+tail -n 3 boot.log
+tail -3 boot.log
+
+# 特定の単語を検索する
+# 正規表現ももちろんできる
+grep 'etc' boot.log
+> 検索結果が返ってくる
+```
