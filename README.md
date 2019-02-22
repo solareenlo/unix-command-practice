@@ -294,7 +294,7 @@ sudo cat /var/log/boot.log
 > きちんと中身が見れる
 ```
 
-# 管理者を変更するchownを使う
+## 管理者を変更するchownを使う
 ```bash
 cp /var/log/boot.log .
 > cp: '/var/log/boot.log' を読み込み用に開くことができません: 許可がありません
@@ -311,7 +311,7 @@ cat boot.log
 > boot.logの中身が見れる
 ```
 
-# wc, head, tail, grepを使う
+## wc, head, tail, grepを使う
 ```bash
 # ファイルの行数, 単語数, 文字数をカウントしてくれるwc
 wc boot.log
@@ -343,7 +343,7 @@ grep 'etc' boot.log
 > 検索結果が返ってくる
 ```
 
-# リダイレクション, パイプを使う
+## リダイレクション, パイプを使う
 ```bash
 # コマンドの実行結果をテキストファイルに出力する
 echo 'date' > cmd.txt
@@ -377,7 +377,7 @@ ls -l /etc | grep 'bash' | wc -l
 > 3
 ```
 
-# ワイルカードを使う
+## ワイルカードを使う
 ```bash
 # 任意の文字列を扱う*を使って, 拡張子が.confを表示する
 ls /etc/*.conf
@@ -388,7 +388,7 @@ ls /etc/c??.*
 > 当該条件に合致するものが表示される
 ```
 
-# find, xargsを使う
+## find, xargsを使う
 ```bash
 # ファイルを検索してくれるfind
 # find 場所 名前で検索 条件(initのあとは何でも良い)
