@@ -58,7 +58,7 @@ ls
 cp -r test test2
 
 # test3ディレクトリの中にconfigディレクトリを一気に作成する
-makir -p test3/config
+mkdir -p test3/config
 
 # test3ディレクトリをtest2ディレクトリに移動する
 mv test3 test2
