@@ -177,11 +177,13 @@ groups
 ## パーミッションの変更
 ```bash
 # 一番はじめの状態が
-# -rwxrw-r--. 1 solareenlo solareenlo 日付 sample
+ls -l
+> -rwxrw-r--. 1 solareenlo solareenlo 日付 sample
 # としよう.
+# rwxrwxrwx の並びは, user group other の並びになっている.
 
 # groupに実行権限を付与する
-chmod o+x sample
+chmod g+x sample
 > rwx rwx r--
 
 # groupとotherに実行権限を与える
